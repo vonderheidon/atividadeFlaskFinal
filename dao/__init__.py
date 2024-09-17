@@ -5,10 +5,14 @@ from psycopg2 import pool
 db_pool = psycopg2.pool.SimpleConnectionPool(
     1,
     10,
-    host='localhost',
+    #host='localhost',
+    #database='atvd1bcc',
+    #user='postgres',
+    #password='Bl@ck0246'
+    host='dpg-crl0aqrv2p9s73bkatqg-a.oregon-postgres.render.com',
     database='atvd1bcc',
-    user='postgres',
-    password='12345678'
+    user='atvd1bcc_user',
+    password='I3JaIeULJZZ5knLcREonMzNkOpx5BMQs'
 )
 
 def get_connection():

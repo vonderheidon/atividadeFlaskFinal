@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Detalhes do Produto</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div>
+            <h1>Detalhes do Produto</h1>
+        </div>
+        <div class="productInfos">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Campo</th>
+                        <th>Detalhe</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>ID</td>
+                        <td>{{ produto[0] }}</td>
+                    </tr>
+                    <tr>
+                        <td>Nome</td>
+                        <td>{{ produto[1] }}</td>
+                    </tr>
+                    <tr>
+                        <td>Cadastrado por</td>
+                        <td>{{ produto[2] }}</td>
+                    </tr>
+                    <tr>
+                        <td>Quantidade</td>
+                        <td>{{ produto[3] }}</td>
+                    </tr>
+                    <tr>
+                        <td>Preço</td>
+                        <td>{{ produto[4] }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>        
+        <div class="backPage">
+            <a href="{{ url_for('listar_produtos') }}">Voltar</a>
+        </div>
+        <div class="message">
+            <p>{{ get_flashed_messages()[0] }}</p>
+        </div>
+    </div>
+</body>
+</html>

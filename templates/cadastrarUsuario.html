@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Usuário</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div>
+            <h1>Cadastro de Novo Usuário</h1>
+        </div>
+        <div class="pageForm">
+            <form method="POST">
+                <div>
+                    <label for="login">Login:</label>
+                    <input type="text" id="login" name="login" required>
+                </div>
+                <div>
+                    <label for="senha">Senha:</label>
+                    <input type="password" id="senha" name="senha" required>
+                </div>
+                <div id="hiddenDiv" class="hidden">
+                    <label for="super">Para fins de desenvolvimento, marque o checkbox para criar um usuário super</label>
+                    <input type="checkbox" id="super" name="super">
+                </div>
+                <button type="submit">Cadastrar</button>
+            </form>
+        </div>
+        <div class="backPage">
+            <a href="{{ url_for('index') }}">Voltar ao Login</a>
+        </div>
+        <div class="message">
+            <p>{{ get_flashed_messages()[0] }}</p>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
